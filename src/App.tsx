@@ -1,8 +1,12 @@
+import { GithubAutocomplete } from "./features/github-autocomplete"
+
 function App() {
   return (
-    <main className="flex flex-col items-center w-full h-screen min-h-fit">
-      <h1>Hello World</h1>
-    </main>
+    <div className="flex flex-col items-center w-full h-screen min-h-fit">
+      <header className="p-4">
+        <GithubAutocomplete />
+      </header>
+    </div>
   )
 }
 
