@@ -1,13 +1,18 @@
-import { useRef } from "react"
+import { useState } from "react"
 import { SearchButton, SearchDialog } from "./components"
+import classNames from "classnames"
 
 const GithubAutocomplete = () => {
-  const ref = useRef<HTMLDialogElement>(null)
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div>
-      <SearchButton onClick={() => ref.current?.showModal()} />
-      <SearchDialog ref={ref} />
+    <div
+      className={classNames("relative", {
+        "w-4/5": isOpen,
+      })}
+    >
+      <SearchButton onClick={() => setIsOpen(true)} />
+      {isOpen && <SearchDialog onClose={() => setIsOpen(false)} />}
     </div>
   )
 }
