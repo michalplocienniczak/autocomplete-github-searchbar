@@ -34,7 +34,10 @@ const SearchResults = ({ search }: SearchResultsProps) => {
 
   if (isUsersEmpty && isReposEmpty && (!search || search?.length < 3))
     return (
-      <span className="italic text-slate-400 text-xs pl-2 py-1 border-l-2 border-slate-400">
+      <span
+        className="italic text-slate-400 text-xs pl-2 py-1 border-l-2 border-slate-400"
+        data-testid="search-too-short"
+      >
         Enter at least 3 characters to start searching.
       </span>
     )

@@ -10,7 +10,9 @@ const ErrorMessage = ({ message }: ErrorMessageProps) => (
       <div className="text-red-600 text-center">
         <XCircleIcon size={24} className="w-14 h-14" />
       </div>
-      <div className="text-center">{message}</div>
+      <div className="text-center" data-testid="error-message__message">
+        {message}
+      </div>
     </div>
   </div>
 )
