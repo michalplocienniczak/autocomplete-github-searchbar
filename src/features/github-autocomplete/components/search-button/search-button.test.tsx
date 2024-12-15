@@ -1,7 +1,6 @@
-import { render, screen } from "@testing-library/react"
+import { fireEvent, render, screen } from "@testing-library/react"
 import { describe, expect, vi, it } from "vitest"
 import SearchButton from "./search-button.components"
-import userEvent from "@testing-library/user-event"
 
 describe("SearchButton", () => {
   it("renders correctly", () => {
@@ -18,7 +17,7 @@ describe("SearchButton", () => {
 
     const button = screen.getByTestId("search-button")
 
-    await userEvent.click(button)
+    button.click()
 
     expect(onClick).toHaveBeenCalledTimes(1)
   })
@@ -27,8 +26,7 @@ describe("SearchButton", () => {
     const onClick = vi.fn()
     render(<SearchButton onClick={onClick} />)
 
-    const event = new KeyboardEvent("keydown", { key: "/" })
-    window.dispatchEvent(event)
+    fireEvent.keyDown(window, { key: "/" })
 
     expect(onClick).toHaveBeenCalledTimes(1)
   })
@@ -37,8 +35,7 @@ describe("SearchButton", () => {
     const onClick = vi.fn()
     render(<SearchButton onClick={onClick} />)
 
-    const event = new KeyboardEvent("keydown", { key: "a" })
-    window.dispatchEvent(event)
+    fireEvent.keyDown(window, { key: "a" })
 
     expect(onClick).not.toHaveBeenCalled()
   })
@@ -47,8 +44,7 @@ describe("SearchButton", () => {
     const onClick = vi.fn()
     render(<SearchButton onClick={onClick} />)
 
-    const event = new KeyboardEvent("keydown", { key: "/", ctrlKey: true })
-    window.dispatchEvent(event)
+    fireEvent.keyDown(window, { key: "/", ctrlKey: true })
 
     expect(onClick).not.toHaveBeenCalled()
   })
@@ -59,8 +55,7 @@ describe("SearchButton", () => {
 
     unmount()
 
-    const event = new KeyboardEvent("keydown", { key: "/" })
-    window.dispatchEvent(event)
+    fireEvent.keyDown(window, { key: "/" })
 
     expect(handleClick).not.toHaveBeenCalled()
   })
