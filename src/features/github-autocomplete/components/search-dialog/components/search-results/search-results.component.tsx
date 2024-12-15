@@ -1,5 +1,5 @@
 import { useGetGithubSearchRepos, useGetGithubSearchUsers } from "@/features/github-autocomplete"
-import { LoadingSkeleton, ResultsList } from "./components"
+import { ErrorMessage, LoadingSkeleton, ResultsList } from "./components"
 
 type SearchResultsProps = {
   search: string | undefined
@@ -22,7 +22,12 @@ const SearchResults = ({ search }: SearchResultsProps) => {
 
   if (isUsersSearchLoading || isReposSearchLoading) return <LoadingSkeleton />
 
-  if (isUsersSearchError || isReposSearchError) return <div>Error: {usersError?.message ?? reposError?.message}</div>
+  if (isUsersSearchError || isReposSearchError)
+    return (
+      <ErrorMessage
+        message={usersError?.message || reposError?.message || "An error occurred while fetching the search results"}
+      />
+    )
 
   if (!users || users.items.length === 0 || !repos || repos.items.length === 0) return <div>No results found</div>
 
