@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react"
 import { describe, expect, vi, it } from "vitest"
-import SearchButton from "./search-button.components"
+import SearchButton from "./search-button.component"
 
 describe("SearchButton", () => {
   it("renders correctly", () => {
