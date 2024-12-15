@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { SearchBar } from "../search-bar"
+import { SearchBar } from "./components"
 
 type SearchDialogProps = {
   onClose: () => void
