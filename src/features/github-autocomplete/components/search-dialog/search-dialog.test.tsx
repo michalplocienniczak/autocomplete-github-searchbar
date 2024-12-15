@@ -15,12 +15,12 @@ describe("SearchDialog", () => {
   const mockOnClose = vi.fn()
 
   beforeEach(() => {
+    mockUseGetGithubSearchUsers.mockReturnValue({ isLoading: false })
+    mockUseGetGithubSearchRepos.mockReturnValue({ isLoading: false })
     mockOnClose.mockClear()
   })
 
   it("renders correctly", () => {
-    mockUseGetGithubSearchUsers.mockReturnValue({ isLoading: false })
-    mockUseGetGithubSearchRepos.mockReturnValue({ isLoading: false })
     render(<SearchDialog onClose={mockOnClose} />)
 
     const dialogsMask = screen.getByTestId("search-dialog__mask")
@@ -38,8 +38,6 @@ describe("SearchDialog", () => {
 
   describe("calls onClose", () => {
     it("when mask is clicked", () => {
-      mockUseGetGithubSearchUsers.mockReturnValue({ isLoading: false })
-      mockUseGetGithubSearchRepos.mockReturnValue({ isLoading: false })
       render(<SearchDialog onClose={mockOnClose} />)
 
       const dialogsMask = screen.getByTestId("search-dialog__mask")
@@ -58,8 +56,6 @@ describe("SearchDialog", () => {
   })
 
   it("does not call onClose when dialog is clicked", () => {
-    mockUseGetGithubSearchUsers.mockReturnValue({ isLoading: false })
-    mockUseGetGithubSearchRepos.mockReturnValue({ isLoading: false })
     render(<SearchDialog onClose={mockOnClose} />)
 
     const dialog = screen.getByTestId("search-dialog")
@@ -69,9 +65,6 @@ describe("SearchDialog", () => {
   })
 
   it("updates search results on SearchBar input change", () => {
-    mockUseGetGithubSearchUsers.mockReturnValue({ isLoading: false })
-    mockUseGetGithubSearchRepos.mockReturnValue({ isLoading: false })
-
     render(<SearchDialog onClose={mockOnClose} />)
 
     const searchInput = screen.getByTestId("search-bar__input")
