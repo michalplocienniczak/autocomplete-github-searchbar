@@ -1,5 +1,5 @@
 import { createQueryKeys } from "@lukemorales/query-key-factory"
-import { GetGithubSearchUsersParams } from "./types"
+import { GetGithubSearchReposParams, GetGithubSearchUsersParams } from "./types"
 import { octokit } from "@/utils"
 
 export const githubQueries = createQueryKeys("github", {
@@ -7,6 +7,17 @@ export const githubQueries = createQueryKeys("github", {
     queryKey: [params],
     queryFn: async () => {
       const response = await octokit.rest.search.users({
+        q: params.q,
+        per_page: params.per_page,
+      })
+
+      return response.data
+    },
+  }),
+  githubSearchRepos: (params: GetGithubSearchReposParams) => ({
+    queryKey: [params],
+    queryFn: async () => {
+      const response = await octokit.rest.search.repos({
         q: params.q,
         per_page: params.per_page,
       })
