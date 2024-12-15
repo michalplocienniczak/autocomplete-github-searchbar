@@ -31,7 +31,7 @@ const ResultsList = ({ users, repos }: ResultsListProps) => {
 
   useEffect(() => {
     const activeElement = ref.current?.querySelector(`#result-${currentSearchResultIndex}`)
-    activeElement?.scrollIntoView({ block: "nearest" })
+    if (activeElement instanceof Element) activeElement.scrollIntoView({ block: "nearest" })
   }, [currentSearchResultIndex])
 
   useEffect(() => {
