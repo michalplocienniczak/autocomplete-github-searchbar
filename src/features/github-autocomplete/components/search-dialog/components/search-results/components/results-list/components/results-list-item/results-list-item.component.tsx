@@ -18,16 +18,26 @@ const ResultsListItem = ({ name, url, type, avatar, isActive, index }: ResultsLi
       "bg-slate-800 before:content-[''] before:absolute before:top-0 before:left-0 before:w-1 before:rounded before:h-full before:bg-blue-600":
         isActive,
     })}
+    data-testid="results-list-item"
   >
-    <a href={url} className="flex items-center justify-between text-xs" target="_blank">
+    <a
+      href={url}
+      className="flex items-center justify-between text-xs"
+      target="_blank"
+      data-testid="results-list-item__link"
+    >
       <div className="flex items-center gap-2">
         {type === "user" && avatar && (
           <div>
-            <img src={avatar} alt={name} className="w-4 h-4 rounded-full" />
+            <img src={avatar} alt={name} className="w-4 h-4 rounded-full" data-testid="results-list-item__avatar" />
           </div>
         )}
-        {type === "repo" && <RepoIcon className="w-4 h-4 text-slate-400" />}
-        <span>{name}</span>
+        {type === "repo" && (
+          <span data-testid="results-list-item__icon">
+            <RepoIcon className="w-4 h-4 text-slate-400" />
+          </span>
+        )}
+        <span data-testid="results-list-item__name">{name}</span>
       </div>
       <span className="text-slate-400">Jump to</span>
     </a>
