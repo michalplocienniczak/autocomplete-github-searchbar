@@ -1,5 +1,5 @@
 import { useGetGithubSearchRepos, useGetGithubSearchUsers } from "@/features/github-autocomplete"
-import { ErrorMessage, LoadingSkeleton, ResultsList } from "./components"
+import { ErrorMessage, LoadingSkeleton, ResultsList, ResultsNotFound } from "./components"
 
 type SearchResultsProps = {
   search: string | undefined
@@ -29,9 +29,19 @@ const SearchResults = ({ search }: SearchResultsProps) => {
       />
     )
 
-  if (!users || users.items.length === 0 || !repos || repos.items.length === 0) return <div>No results found</div>
+  const isUsersEmpty = !users || users.items.length === 0
+  const isReposEmpty = !repos || repos.items.length === 0
 
-  return <ResultsList users={users.items} repos={repos.items} />
+  if (isUsersEmpty && isReposEmpty && (!search || search?.length < 3))
+    return (
+      <span className="italic text-slate-400 text-xs pl-2 py-1 border-l-2 border-slate-400">
+        Enter at least 3 characters to start searching.
+      </span>
+    )
+
+  if (isUsersEmpty && isReposEmpty) return <ResultsNotFound />
+
+  return <ResultsList users={users?.items ?? []} repos={repos?.items ?? []} />
 }
 
 export default SearchResults
