@@ -8,7 +8,7 @@ type SearchButtonProps = {
 const SearchButton = ({ onClick }: SearchButtonProps) => {
   useEffect(() => {
     const hanldeKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "/") {
+      if (event.key === "/" && !event.ctrlKey && !event.metaKey) {
         event.preventDefault()
         onClick()
       }
@@ -25,6 +25,7 @@ const SearchButton = ({ onClick }: SearchButtonProps) => {
     <button
       className="py-1 px-2 text-xs bg-transparent border-[1px] border-solid border-slate-600 rounded h-8 text-slate-400 flex items-center w-64 gap-2"
       onClick={onClick}
+      data-testid="search-button"
     >
       <SearchIcon />
       <span>
