@@ -1,5 +1,7 @@
 # Github Autocomplete Search
 
+Try it yourself! -> https://github-autocomplete-search.vercel.app/
+
 ## Overview
 
 Github Autocomplete Search is a lightweight, performant React-based project that enables users to search for Github repositories and profiles seamlessly. The application uses Github's REST API, providing a user-friendly autocomplete component built from scratch. The project adheres to modern development practices and includes thorough testing.
