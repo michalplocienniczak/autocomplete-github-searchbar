@@ -79,8 +79,8 @@ describe("ResultsListItem", () => {
     )
 
     const listItem = screen.getByTestId("results-list-item")
-    expect(listItem).toHaveClass("bg-slate-800")
-    expect(listItem).toHaveClass("before:bg-blue-600")
+    expect(listItem).toHaveClass("bg-background-hover-secondary")
+    expect(listItem).toHaveClass("before:bg-accent")
   })
 
   it("has correct hover style", () => {
@@ -96,7 +96,7 @@ describe("ResultsListItem", () => {
     )
 
     const listItem = screen.getByTestId("results-list-item")
-    expect(listItem).toHaveClass("hover:bg-slate-800")
+    expect(listItem).toHaveClass("hover:bg-background-hover-secondary")
   })
 
   it("has correct id", () => {

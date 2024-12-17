@@ -3,5 +3,25 @@
 @tailwind utilities;
 
 body {
+  @apply bg-white text-slate-950;
+  --accent: #2563eb;
+  --danger: #dc2626;
+  --primary: #020617;
+  --secondary: #475569;
+  --border: #94a3b8;
+  --background: #fff;
+  --background-hover: #f8fafc;
+  --background-hover-secondary: #f1f5f9;
+}
+
+.dark body {
   @apply bg-slate-950 text-white;
+  --accent: #2563eb;
+  --danger: #dc2626;
+  --primary: #fff;
+  --secondary: #94a3b8;
+  --border: #475569;
+  --background: #020617;
+  --background-hover: #0f172a;
+  --background-hover-secondary: #1e293b;
 }

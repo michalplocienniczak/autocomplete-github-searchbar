@@ -29,12 +29,12 @@ const SearchDialog = ({ onClose }: SearchDialogProps) => {
   return (
     <>
       <div
-        className="w-full h-screen fixed top-0 left-0 bg-slate-950 opacity-40"
+        className="w-full h-screen fixed top-0 left-0 bg-background opacity-40"
         onClick={onClose}
         data-testid="search-dialog__mask"
       />
       <div
-        className="absolute p-3 -top-3 -right-3 bg-slate-950 shadow-xl rounded-xl h-fit max-h-[80vh] w-[calc(100%+26px)] border-2 border-slate-600 grid grid-rows-[32px,1fr] gap-2"
+        className="absolute p-3 -top-3 -right-3 bg-background shadow-xl rounded-xl h-fit max-h-[80vh] w-[calc(100%+26px)] border-2 border-border grid grid-rows-[32px,1fr] gap-2"
         data-testid="search-dialog"
       >
         <SearchBar onChange={handleSearch} />

@@ -46,13 +46,13 @@ describe("ResultsList", () => {
     fireEvent.keyDown(window, { key: "ArrowDown" })
 
     let activeItem = screen.getByText("brepo1")
-    expect(activeItem.closest("li")).toHaveClass("bg-slate-800")
+    expect(activeItem.closest("li")).toHaveClass("bg-background-hover-secondary")
 
     // Press ArrowUp
     fireEvent.keyDown(window, { key: "ArrowUp" })
 
     activeItem = screen.getByText("auser1")
-    expect(activeItem.closest("li")).toHaveClass("bg-slate-800")
+    expect(activeItem.closest("li")).toHaveClass("bg-background-hover-secondary")
   })
 
   it("opens the selected item's URL in a new tab on Enter", () => {
@@ -79,7 +79,7 @@ describe("ResultsList", () => {
 
     const activeElement = container.querySelector("#result-0")
     expect(scrollIntoViewMock).toHaveBeenCalledWith({ block: "nearest" })
-    expect(activeElement).toHaveClass("bg-slate-800")
+    expect(activeElement).toHaveClass("bg-background-hover-secondary")
   })
 
   it("removes event listeners on unmount", () => {

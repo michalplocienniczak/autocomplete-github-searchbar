@@ -12,6 +12,6 @@ describe("LoadingSkeleton", () => {
   it("has the correct class names for styling", () => {
     render(<LoadingSkeleton />)
     const skeletonItem = screen.getByTestId("loading-skeleton__item-0")
-    expect(skeletonItem).toHaveClass("w-full min-h-7 bg-slate-700 rounded")
+    expect(skeletonItem).toHaveClass("w-full min-h-7 bg-background-hover-secondary rounded")
   })
 })

@@ -23,14 +23,14 @@ const SearchButton = ({ onClick }: SearchButtonProps) => {
 
   return (
     <button
-      className="py-1 px-2 text-xs bg-transparent border-[1px] border-solid border-slate-600 rounded h-8 text-slate-400 flex items-center w-64 gap-2"
+      className="py-1 px-2 text-xs bg-transparent border-[1px] border-solid border-border rounded h-8 text-secondary flex items-center w-64 gap-2"
       onClick={onClick}
       data-testid="search-button"
     >
       <SearchIcon />
       <span>
         Type
-        <kbd className="border-[1px] border-solid border-slate-400 inline-grid w-[18px] h-[18px] items-center rounded mx-1">
+        <kbd className="border-[1px] border-solid border-secondary inline-grid w-[18px] h-[18px] items-center rounded mx-1">
           /
         </kbd>
         to search

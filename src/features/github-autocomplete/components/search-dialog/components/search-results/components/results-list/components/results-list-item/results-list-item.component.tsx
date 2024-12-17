@@ -14,8 +14,8 @@ type ResultsListItemProps = {
 const ResultsListItem = ({ name, url, type, avatar, isActive, index }: ResultsListItemProps) => (
   <li
     id={`result-${index}`}
-    className={classNames("relative p-2 rounded hover:bg-slate-800", {
-      "bg-slate-800 before:content-[''] before:absolute before:top-0 before:left-0 before:w-1 before:rounded before:h-full before:bg-blue-600":
+    className={classNames("relative p-2 rounded hover:bg-background-hover-secondary", {
+      "bg-background-hover-secondary before:content-[''] before:absolute before:top-0 before:left-0 before:w-1 before:rounded before:h-full before:bg-accent":
         isActive,
     })}
     data-testid="results-list-item"
@@ -34,12 +34,12 @@ const ResultsListItem = ({ name, url, type, avatar, isActive, index }: ResultsLi
         )}
         {type === "repo" && (
           <span data-testid="results-list-item__icon">
-            <RepoIcon className="w-4 h-4 text-slate-400" />
+            <RepoIcon className="w-4 h-4 text-secondary" />
           </span>
         )}
         <span data-testid="results-list-item__name">{name}</span>
       </div>
-      <span className="text-slate-400">Jump to</span>
+      <span className="text-secondary">Jump to</span>
     </a>
   </li>
 )
