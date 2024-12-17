@@ -60,5 +60,3 @@ The project is built using:
 Enter a minimum of 3 characters in the search bar to fetch autocomplete results. Navigate using the keyboard or mouse, and select an option to open its Github page in a new tab.
 
 https://github.com/user-attachments/assets/ac504331-9757-438e-9b39-c40651b1b51c
-
-

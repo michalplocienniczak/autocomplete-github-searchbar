@@ -7,7 +7,7 @@ export const githubQueries = createQueryKeys("github", {
     queryKey: [params],
     queryFn: async () => {
       const response = await octokit.rest.search.users({
-        q: params.q,
+        q: params.q!,
         per_page: params.per_page,
       })
 
@@ -18,7 +18,7 @@ export const githubQueries = createQueryKeys("github", {
     queryKey: [params],
     queryFn: async () => {
       const response = await octokit.rest.search.repos({
-        q: params.q,
+        q: params.q!,
         per_page: params.per_page,
       })
 
