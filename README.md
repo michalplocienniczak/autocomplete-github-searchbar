@@ -12,6 +12,8 @@ Github Autocomplete Search is a lightweight, performant React-based project that
 - **Result Limitation**: A maximum of 50 results per request to optimize performance.
 - **Feedback States**: Visual feedback for loading, empty results, and errors.
 - **Keyboard Navigation**: Use arrow keys to navigate and Enter to open links in new tabs.
+- **Dark Mode**: Supports dark mode for a better user experience in low-light environments.
+- **Responsive Design**: Fully responsive layout for optimal use on devices of all sizes.
 - **Test Coverage**: Includes meaningful unit and integration tests.
 
 ## Tech Stack
@@ -56,3 +58,7 @@ The project is built using:
 ## Usage
 
 Enter a minimum of 3 characters in the search bar to fetch autocomplete results. Navigate using the keyboard or mouse, and select an option to open its Github page in a new tab.
+
+https://github.com/user-attachments/assets/ac504331-9757-438e-9b39-c40651b1b51c
+
+
