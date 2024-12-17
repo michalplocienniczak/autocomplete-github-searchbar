@@ -1,50 +1,58 @@
-# React + TypeScript + Vite
+# Github Autocomplete Search
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+Github Autocomplete Search is a lightweight, performant React-based project that enables users to search for Github repositories and profiles seamlessly. The application uses Github's REST API, providing a user-friendly autocomplete component built from scratch. The project adheres to modern development practices and includes thorough testing.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Custom Autocomplete**: A fully custom autocomplete solution built without existing libraries.
+- **Minimal Input**: Search initializes after entering at least 3 characters.
+- **Alphabetical Sorting**: Results are sorted alphabetically by repository and profile name.
+- **Result Limitation**: A maximum of 50 results per request to optimize performance.
+- **Feedback States**: Visual feedback for loading, empty results, and errors.
+- **Keyboard Navigation**: Use arrow keys to navigate and Enter to open links in new tabs.
+- **Test Coverage**: Includes meaningful unit and integration tests.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Tech Stack
 
-- Configure the top-level `parserOptions` property like this:
+The project is built using:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **React**: Component-based UI development.
+- **Vite**: Fast build tool for modern web projects.
+- **TailwindCSS**: Utility-first CSS framework for styling.
+- **Vitest**: Blazing fast testing framework.
+- **Octokit**: Github API client.
+- **Tanstack Query**: React Query for efficient data fetching and caching.
+- **Query Key Factory**: Utility for consistent and reusable query keys.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Installation
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. Clone the repository:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+   ```bash
+   git clone https://github.com/michalplocienniczak/github-autocomplete-search.git
+   cd github-autocomplete-search
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Run tests:
+
+   ```bash
+   npm test
+   ```
+
+## Usage
+
+Enter a minimum of 3 characters in the search bar to fetch autocomplete results. Navigate using the keyboard or mouse, and select an option to open its Github page in a new tab.
