@@ -34,7 +34,7 @@ const SearchDialog = ({ onClose }: SearchDialogProps) => {
         data-testid="search-dialog__mask"
       />
       <div
-        className="absolute p-3 -top-3 -right-3 bg-background shadow-xl rounded-xl h-fit max-h-[80vh] w-[calc(100%+26px)] border-2 border-border grid grid-rows-[32px,1fr] gap-2"
+        className="absolute p-3 top-0 left-0 right-auto md:-top-3 md:-right-3 md:left-auto bg-background shadow-xl rounded-xl h-fit max-h-[80vh] w-full md:w-[calc(100%+26px)] border-2 border-border grid grid-rows-[32px,1fr] gap-2"
         data-testid="search-dialog"
       >
         <SearchBar onChange={handleSearch} />

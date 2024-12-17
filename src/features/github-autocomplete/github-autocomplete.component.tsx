@@ -7,7 +7,7 @@ const GithubAutocomplete = () => {
 
   return (
     <div
-      className={classNames("relative", {
+      className={classNames("md:relative", {
         "w-4/5": isOpen,
       })}
     >

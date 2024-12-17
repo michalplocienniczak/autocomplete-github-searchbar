@@ -22,7 +22,7 @@ const ResultsListItem = ({ name, url, type, avatar, isActive, index }: ResultsLi
   >
     <a
       href={url}
-      className="flex items-center justify-between text-xs"
+      className="flex items-center justify-between text-xs gap-2 md:gap-0"
       target="_blank"
       data-testid="results-list-item__link"
     >
@@ -39,7 +39,7 @@ const ResultsListItem = ({ name, url, type, avatar, isActive, index }: ResultsLi
         )}
         <span data-testid="results-list-item__name">{name}</span>
       </div>
-      <span className="text-secondary">Jump to</span>
+      <span className="text-secondary whitespace-nowrap">Jump to</span>
     </a>
   </li>
 )
